@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Nebula | Futuristic E‑Commerce</title>
-    <!-- Google Fonts + Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>PRIME Drive | Premium Car Booking India</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons & Swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper for touch-friendly slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
@@ -17,713 +17,500 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: #0B0E17;
-            color: #EDF2FF;
-            transition: background 0.3s ease, color 0.2s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0A0C10;
+            color: #FFFFFF;
             scroll-behavior: smooth;
         }
 
-        /* Light mode */
-        body.light {
-            background: #F8FAFF;
-            color: #0A0C15;
-        }
-
-        body.light .glass-card,
-        body.light .product-card,
-        body.light .cat-card,
-        body.light .testimonial-card {
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        body.light .nav-links a,
-        body.light .footer-col p {
-            color: #2D3A5E;
-        }
-
-        body.light header {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        body.light .btn-outline-light {
-            border-color: #1E2A44;
-            color: #1E2A44;
-        }
-
-        body.light .price {
-            color: #0F2B3D;
+        /* premium gradient background */
+        .bg-radial {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, #141824, #07090E);
+            z-index: -2;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 28px;
+            padding: 0 40px;
         }
 
-        /* Header Glassmorphism */
+        /* glassmorphic header */
         header {
+            backdrop-filter: blur(18px);
+            background: rgba(10, 12, 18, 0.65);
+            border-bottom: 1px solid rgba(255, 215, 150, 0.15);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(11, 14, 23, 0.78);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.2s;
         }
 
         .header-flex {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 0;
-            gap: 20px;
+            padding: 18px 0;
             flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.9rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #FFFFFF, #A5F0FF);
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(125deg, #F5E6CC, #E2B87A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
         .logo span {
-            color: #2AD4FF;
+            color: #E2B87A;
             background: none;
-            -webkit-background-clip: unset;
         }
-
         .nav-links {
             display: flex;
-            gap: 28px;
-            align-items: center;
+            gap: 32px;
         }
-
         .nav-links a {
+            color: #D4D8E6;
             font-weight: 500;
             transition: 0.2s;
-            color: #D9E2F5;
+        }
+        .nav-links a:hover { color: #E2B87A; }
+        .booking-btn {
+            background: rgba(226, 184, 122, 0.12);
+            border: 1px solid rgba(226, 184, 122, 0.5);
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #E2B87A;
+            transition: 0.2s;
         }
 
-        .nav-links a:hover {
-            color: #2AD4FF;
-        }
-
-        .search-wrapper {
+        /* Hero Premium */
+        .hero-premium {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            background: rgba(255, 255, 255, 0.08);
+            justify-content: space-between;
+            margin: 60px 0 40px;
+            gap: 40px;
+        }
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #F9D976, #E2B87A);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero-badge {
+            display: inline-flex;
+            background: rgba(226, 184, 122, 0.15);
+            border-radius: 60px;
+            padding: 6px 18px;
+            margin-bottom: 24px;
+            font-size: 0.8rem;
+            border: 0.5px solid rgba(226,184,122,0.4);
+        }
+        .cta-button {
+            background: linear-gradient(95deg, #E2B87A, #C99E5F);
+            border: none;
+            padding: 14px 36px;
             border-radius: 48px;
-            padding: 6px 16px;
-            gap: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            color: #0A0C10;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 28px;
+            box-shadow: 0 12px 28px rgba(226,184,122,0.25);
         }
 
-        .search-wrapper input {
-            background: transparent;
-            border: none;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            width: 200px;
+        /* Car cards grid */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 50px 0 20px;
+            letter-spacing: -0.3px;
+        }
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+            margin: 30px 0 60px;
+        }
+        .car-card {
+            background: rgba(18, 22, 32, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid rgba(226, 184, 122, 0.2);
+            transition: all 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-6px);
+            border-color: #E2B87A;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5);
+        }
+        .car-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .car-info {
+            padding: 24px;
+        }
+        .car-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price-inr {
+            font-weight: 800;
+            color: #E2B87A;
+            font-size: 1.4rem;
+        }
+        .features {
+            display: flex;
+            gap: 15px;
+            margin: 14px 0;
+            color: #B0B7CF;
+            font-size: 0.85rem;
+        }
+        .btn-book {
+            width: 100%;
+            background: rgba(226, 184, 122, 0.1);
+            border: 1px solid rgba(226, 184, 122, 0.5);
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #E2B87A;
+            transition: 0.2s;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+        .btn-book:hover {
+            background: #E2B87A;
+            color: #0A0C10;
+        }
+
+        /* why choose us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .feature-card {
+            background: rgba(20, 25, 36, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 28px;
+            text-align: center;
+            border: 1px solid rgba(255,215,150,0.1);
+        }
+
+        /* testimonial swiper */
+        .testi-slide {
+            background: rgba(22, 26, 38, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 28px;
+            border: 1px solid #2F3545;
+        }
+
+        /* booking modal (clean) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #10131E;
+            max-width: 460px;
+            width: 90%;
+            border-radius: 40px;
+            padding: 32px;
+            border: 1px solid #E2B87A;
+            color: white;
+        }
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 60px;
+            background: #1E2332;
+            border: 1px solid #3A4055;
             color: white;
             outline: none;
         }
-
-        body.light .search-wrapper {
-            background: #EFF3FC;
-            border-color: #CBD5E1;
-        }
-
-        body.light .search-wrapper input {
-            color: #0A0C15;
-        }
-
-        .action-icons {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .icon-circle {
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: 0.2s;
-            background: rgba(255, 255, 255, 0.05);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .cart-badge {
-            position: relative;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: #2AD4FF;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 2px 7px;
-            color: #0B0E17;
-        }
-
-        /* Hero 3D */
-        .hero-3d {
-            margin-top: 20px;
-            border-radius: 48px;
-            background: radial-gradient(circle at 70% 20%, #152032, #070A12);
-            padding: 60px 40px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .hero-text h1 {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .gradient-text {
-            background: linear-gradient(125deg, #FFFFFF, #2AD4FF, #A155FF);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .btn-glow {
-            background: linear-gradient(95deg, #2AD4FF, #0077FF);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-weight: 600;
-            color: #0A0C15;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 8px 20px rgba(42, 212, 255, 0.3);
-        }
-
-        /* Cards */
-        .grid-auto {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 24px;
-            margin: 48px 0;
-        }
-
-        .cat-card {
-            background: #141B2B;
-            border-radius: 32px;
-            padding: 24px 12px;
-            text-align: center;
-            transition: 0.2s;
-            cursor: pointer;
-            backdrop-filter: blur(2px);
-        }
-
-        .cat-card i {
-            font-size: 2.5rem;
-            color: #2AD4FF;
-            margin-bottom: 12px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 32px;
-            margin: 40px 0;
-        }
-
-        .product-card {
-            background: #101624;
-            border-radius: 32px;
-            overflow: hidden;
-            transition: all 0.25s ease;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(42, 212, 255, 0.1);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            border-color: #2AD4FF;
-            box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            transition: 0.3s;
-        }
-
-        .product-info {
-            padding: 18px;
-        }
-
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 12px 0;
-        }
-
-        .price {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #2AD4FF;
-        }
-
-        .add-cart {
-            background: rgba(42, 212, 255, 0.12);
-            border: 1px solid #2AD4FF;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .flash-sale {
-            background: linear-gradient(115deg, #201A30, #0B0E22);
-            border-radius: 40px;
-            padding: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            margin: 60px 0;
-        }
-
-        .timer-grid {
-            display: flex;
-            gap: 18px;
-        }
-
-        .time-block {
-            background: #00000044;
-            backdrop-filter: blur(8px);
-            padding: 16px 20px;
-            border-radius: 28px;
-            text-align: center;
-            min-width: 80px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* testimonials swiper */
-        .swiper {
-            padding: 20px 0 40px;
-        }
-
-        .testimonial-card {
-            background: #111827;
-            border-radius: 32px;
-            padding: 28px;
-        }
-
-        .newsletter-modern {
-            background: linear-gradient(135deg, #1B243F, #0C1122);
-            border-radius: 48px;
-            padding: 56px 32px;
-            text-align: center;
-        }
-
-        .footer {
-            padding: 48px 0 28px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 40px;
-        }
-
-        @media (max-width: 800px) {
-            .nav-links {
-                display: none;
-            }
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        @media (max-width: 500px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        button, .add-cart, .cat-card {
-            cursor: pointer;
-        }
-        .toast-msg {
+        .toast-premium {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #2AD4FF;
-            color: #0B0E17;
-            padding: 12px 24px;
+            background: #1E2A3A;
+            backdrop-filter: blur(12px);
+            padding: 14px 28px;
             border-radius: 60px;
-            font-weight: 600;
-            z-index: 200;
-            transform: translateY(100px);
+            border-left: 4px solid #E2B87A;
+            z-index: 1100;
+            transform: translateY(60px);
             transition: 0.3s;
             opacity: 0;
+            font-weight: 500;
         }
-        .toast-msg.show {
+        .toast-premium.show {
             transform: translateY(0);
             opacity: 1;
         }
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.3rem;
+        footer {
+            border-top: 1px solid rgba(226,184,122,0.2);
+            padding: 48px 0 28px;
+            margin-top: 40px;
+        }
+        @media (max-width: 900px) {
+            .container { padding: 0 24px; }
+            .hero-text h1 { font-size: 2.4rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
+<div class="bg-radial"></div>
 
 <header>
     <div class="container header-flex">
-        <div class="logo">NEBULA<span>STORE</span></div>
+        <div class="logo">PRIME<span>DRIVE</span></div>
         <div class="nav-links">
             <a href="#">Home</a>
-            <a href="#products">Shop</a>
-            <a href="#deals">Flash Sale</a>
-            <a href="#reviews">Reviews</a>
+            <a href="#fleet">Our Fleet</a>
+            <a href="#why">Luxury Promise</a>
+            <a href="#testimonials">Experiences</a>
         </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-            <div class="search-wrapper">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInputGlobal" placeholder="Search products...">
-            </div>
-            <div class="action-icons">
-                <div class="icon-circle theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </div>
-                <div class="icon-circle cart-badge" id="cartIcon">
-                    <i class="fas fa-bag-shopping"></i>
-                    <span class="cart-count" id="cartTotalCount">0</span>
-                </div>
-            </div>
-        </div>
+        <div><button class="booking-btn" id="quickSupport"><i class="fas fa-headset"></i> 24/7 Concierge</button></div>
     </div>
 </header>
 
 <main>
     <div class="container">
-        <!-- Hero Section with Diagonal 3D feel -->
-        <div class="hero-3d">
+        <!-- HERO -->
+        <div class="hero-premium">
             <div class="hero-text">
-                <h1>Beyond the <span class="gradient-text">ordinary</span><br>next‑gen style</h1>
-                <p style="margin: 20px 0; opacity: 0.8;">Discover futuristic designs & premium quality. Free shipping worldwide.</p>
-                <button class="btn-glow" id="exploreBtn">Explore collection <i class="fas fa-arrow-right"></i></button>
+                <div class="hero-badge"><i class="fas fa-gem"></i> India’s Most Premium Chauffeured Fleet</div>
+                <h1>Drive the extraordinary.<br><span class="gold-text">Luxury at your command</span></h1>
+                <p style="margin: 22px 0; color: #B7C0D8; max-width: 550px;">Choose from a fleet of handpicked luxury cars – Mercedes, BMW, Audi, Range Rover. Zero hidden charges, expert chauffeurs, and 5-star hospitality.</p>
+                <button class="cta-button" id="exploreFleet"><i class="fas fa-car-side"></i> Explore Vehicles</button>
             </div>
-            <div style="flex-shrink: 0;">
-                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=400&q=80" style="width: 240px; border-radius: 38px; rotate: 4deg; box-shadow: 0 20px 35px rgba(0,0,0,0.4);" alt="hero">
-            </div>
-        </div>
-
-        <!-- Categories -->
-        <div style="margin: 50px 0 20px;">
-            <h2 style="font-size: 2rem;">Shop by <span style="color:#2AD4FF;">Vibe</span></h2>
-            <div class="grid-auto" id="categoriesContainer"></div>
-        </div>
-
-        <!-- Products Section -->
-        <div id="products">
-            <h2 style="font-size: 2rem; margin-top: 20px;">✨ Trending Drops</h2>
-            <div class="product-grid" id="productsGrid"></div>
-        </div>
-
-        <!-- Flash Sale Deal -->
-        <div id="deals">
-            <div class="flash-sale">
-                <div style="flex: 1;">
-                    <h2 style="font-size: 2.2rem;">⚡ FLASH SALE</h2>
-                    <p style="margin: 10px 0 20px;">Limited time on XR眼镜 + Smart Gear</p>
-                    <div class="timer-grid" id="timerBlock">
-                        <div class="time-block"><span id="days">00</span><br>Days</div>
-                        <div class="time-block"><span id="hours">00</span><br>Hrs</div>
-                        <div class="time-block"><span id="minutes">00</span><br>Min</div>
-                        <div class="time-block"><span id="seconds">00</span><br>Sec</div>
-                    </div>
-                    <div style="margin-top: 24px;"><span style="font-size: 2rem; font-weight: 700;">$249</span> <span style="text-decoration: line-through; opacity: 0.6;">$499</span></div>
-                    <button class="btn-glow" id="flashDealBtn" style="margin-top: 18px;">Grab Deal <i class="fas fa-bolt"></i></button>
-                </div>
-                <div><img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=300&q=80" style="border-radius: 32px; width: 220px;" alt="deal"></div>
+            <div style="background: radial-gradient(circle, #302b1e22, transparent); border-radius: 50px;">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=500&h=450&q=80" style="width: 380px; border-radius: 38px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));" alt="luxury car">
             </div>
         </div>
 
-        <!-- Testimonials Carousel -->
-        <div id="reviews" style="margin: 50px 0;">
-            <h2 style="text-align: center;">❤️ Loved by Creators</h2>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper" id="testimonialsSwiper"></div>
+        <!-- FLEET SECTION with INR pricing -->
+        <div id="fleet">
+            <div class="section-title">✨ Choose your <span class="gold-text">premium ride</span>  ·  INR / day</div>
+            <div class="car-grid" id="carsContainer"></div>
+        </div>
+
+        <!-- Why Choose us -->
+        <div id="why">
+            <div class="section-title">Why <span class="gold-text">PRIME DRIVE</span>?</div>
+            <div class="features-grid">
+                <div class="feature-card"><i class="fas fa-crown" style="font-size: 2rem; color:#E2B87A;"></i><h3 style="margin:12px 0">Elite Fleet</h3><p>Curated luxury vehicles meticulously maintained.</p></div>
+                <div class="feature-card"><i class="fas fa-user-shield" style="font-size: 2rem; color:#E2B87A;"></i><h3 style="margin:12px 0">Trained Chauffeurs</h3><p>Professional, courteous, uniformed drivers.</p></div>
+                <div class="feature-card"><i class="fas fa-rupee-sign" style="font-size: 2rem; color:#E2B87A;"></i><h3 style="margin:12px 0">No Surge Pricing</h3><p>Fixed transparent rates + 24/7 support.</p></div>
+                <div class="feature-card"><i class="fas fa-map-marked-alt" style="font-size: 2rem; color:#E2B87A;"></i><h3 style="margin:12px 0">Pan India Coverage</h3><p>Delhi, Mumbai, Bangalore, Goa & more.</p></div>
+            </div>
+        </div>
+
+        <!-- Testimonials Swiper -->
+        <div id="testimonials">
+            <div class="section-title">What our <span class="gold-text">guests say</span></div>
+            <div class="swiper mySwiper" style="margin: 30px 0 60px;">
+                <div class="swiper-wrapper" id="testimonialSlider"></div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
-
-        <!-- Newsletter -->
-        <div class="newsletter-modern">
-            <h3>Join the Nebula Club</h3>
-            <p style="margin: 12px 0;">Get early access & 15% off your first order</p>
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-                <input type="email" id="newsEmail" placeholder="you@example.com" style="padding: 14px 24px; border-radius: 60px; border: none; width: 280px; background: #ffffff20; color: white;">
-                <button id="subNewsBtn" style="background: #2AD4FF; border: none; padding: 14px 28px; border-radius: 60px; font-weight: bold;">Subscribe →</button>
-            </div>
-            <div id="newsMsg" style="margin-top: 12px;"></div>
         </div>
     </div>
 </main>
 
-<footer class="footer">
-    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-        <div><div class="logo" style="font-size: 1.8rem;">NEBULA</div><p style="margin-top: 12px;">Elevate your everyday<br>© 2026</p></div>
-        <div><h4>Explore</h4><p>New Arrivals<br>Best sellers<br>Gift cards</p></div>
-        <div><h4>Support</h4><p>FAQs<br>Returns<br>Contact</p></div>
-        <div><div style="display: flex; gap: 18px;"><i class="fab fa-instagram"></i><i class="fab fa-x-twitter"></i><i class="fab fa-tiktok"></i></div></div>
+<footer>
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+        <div><div class="logo" style="font-size: 1.8rem;">PRIME<span>DRIVE</span></div><p style="margin-top: 10px;">Luxury Redefined for Indian Roads</p><p style="font-size: 13px;">📍 Delhi | Mumbai | Bengaluru | Hyderabad</p></div>
+        <div><h4>Quick Links</h4><p>Corporate Booking<br>Wedding Fleet<br>Airport Transfer</p></div>
+        <div><h4>Support</h4><p>+91 9999 888 777<br>care@primedrive.in<br>24/7 Concierge</p></div>
+        <div><div style="display: flex; gap: 18px;"><i class="fab fa-instagram fa-lg"></i><i class="fab fa-linkedin-in fa-lg"></i><i class="fab fa-x-twitter"></i></div></div>
     </div>
+    <div class="container" style="text-align: center; margin-top: 40px; font-size: 12px;">© 2026 PRIME DRIVE — India’s Premium Car Booking Service</div>
 </footer>
-<div id="toastMsg" class="toast-msg">✨ Added to cart</div>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModalBtn">&times;</span>
+        <h3 style="margin-bottom: 15px;">📅 Reserve your <span id="modalCarName">Luxury Car</span></h3>
+        <form id="bookingForm">
+            <div class="form-group"><input type="text" id="userName" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="tel" id="userPhone" placeholder="Mobile Number" required></div>
+            <div class="form-group"><input type="email" id="userEmail" placeholder="Email Address"></div>
+            <div class="form-group"><input type="date" id="pickupDate" required></div>
+            <div class="form-group"><select id="citySelect"><option value="Delhi">Delhi NCR</option><option value="Mumbai">Mumbai</option><option value="Bangalore">Bangalore</option><option value="Goa">Goa</option></select></div>
+            <button type="submit" class="btn-book" style="width:100%; background:#E2B87A; color:#0A0C10; border: none;">Confirm Booking (No payment now)</button>
+        </form>
+        <p style="font-size: 12px; margin-top: 12px;">* our concierge will call to confirm within 2 hours</p>
+    </div>
+</div>
+
+<div id="toastPremium" class="toast-premium">✨ Booking request sent! We'll contact you shortly.</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    // ----- DATA -----
-    const categoriesData = [
-        { id: 1, name: "Audio", icon: "fas fa-headphones" },
-        { id: 2, name: "Wearables", icon: "fas fa-clock" },
-        { id: 3, name: "Gaming", icon: "fas fa-gamepad" },
-        { id: 4, name: "Camera", icon: "fas fa-camera" },
-        { id: 5, name: "Fashion", icon: "fas fa-tshirt" },
-        { id: 6, name: "Drone", icon: "fas fa-drone" }
+    // ---------- PREMIUM CAR DATA (INR PRICING) ----------
+    const cars = [
+        { id: 1, name: "Mercedes-Benz S-Class", pricePerDay: 24999, fuel: "Diesel", seats: 4, transmission: "Automatic", img: "https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=600&h=400&q=80", badge:"Flagship" },
+        { id: 2, name: "BMW 7 Series", pricePerDay: 22999, fuel: "Petrol", seats: 4, transmission: "Auto", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&h=400&q=80", badge:"Executive" },
+        { id: 3, name: "Audi Q7", pricePerDay: 21999, fuel: "Petrol", seats: 6, transmission: "Quattro", img: "https://images.unsplash.com/photo-1606664515524-8b0bf7d743bc?auto=format&fit=crop&w=600&h=400&q=80", badge:"SUV Luxury" },
+        { id: 4, name: "Range Rover Velar", pricePerDay: 27999, fuel: "Diesel", seats: 5, transmission: "4x4", img: "https://images.unsplash.com/photo-1536730343531-6b2c2aed5985?auto=format&fit=crop&w=600&h=400&q=80", badge:"Iconic" },
+        { id: 5, name: "Porsche Cayenne", pricePerDay: 31999, fuel: "Petrol", seats: 4, transmission: "PDK", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&h=400&q=80", badge:"Sport" },
+        { id: 6, name: "Volvo XC90", pricePerDay: 18999, fuel: "Hybrid", seats: 7, transmission: "Auto", img: "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&h=400&q=80", badge:"Family" }
     ];
-    const productsData = [
-        { id: 101, title: "Orion XR Glasses", price: 349, oldPrice: 599, rating: 5, img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80", category: "Wearables" },
-        { id: 102, title: "NOVA Pro Headphones", price: 199, oldPrice: 279, rating: 4, img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80", category: "Audio" },
-        { id: 103, title: "Cyberpunk 2077 Edge", price: 89, rating: 5, img: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80", category: "Gaming" },
-        { id: 104, title: "Drone X-Pulse", price: 599, oldPrice: 799, rating: 5, img: "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?auto=format&fit=crop&w=600&q=80", category: "Drone" },
-        { id: 105, title: "Aether Watch Ultra", price: 399, rating: 4, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80", category: "Wearables" },
-        { id: 106, title: "Retro Hoodie", price: 79, oldPrice: 129, rating: 5, img: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80", category: "Fashion" }
-    ];
-    let cartItemsCount = 0;
-    let currentFilter = "";
 
-    // Helper dom elements
-    const categoriesContainer = document.getElementById('categoriesContainer');
-    const productsGrid = document.getElementById('productsGrid');
-    const cartCountSpan = document.getElementById('cartTotalCount');
-    const searchGlobal = document.getElementById('searchInputGlobal');
-    const toast = document.getElementById('toastMsg');
-    const themeToggleBtn = document.getElementById('themeToggle');
+    let currentSelectedCar = null;
 
-    function showToast(msg) {
-        toast.textContent = msg || "✨ Added to cart";
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 1800);
-    }
-
-    function updateCartUI() {
-        cartCountSpan.textContent = cartItemsCount;
-        localStorage.setItem('nebulaCartCount', cartItemsCount);
-    }
-
-    function addToCart(productId) {
-        const product = productsData.find(p => p.id === productId);
-        if(!product) return;
-        cartItemsCount++;
-        updateCartUI();
-        showToast(`${product.title} added`);
-    }
-
-    function renderCategories() {
-        categoriesContainer.innerHTML = categoriesData.map(cat => `
-            <div class="cat-card" data-cat="${cat.name}">
-                <i class="${cat.icon}"></i>
-                <h4>${cat.name}</h4>
-                <p style="font-size: 12px;">Explore</p>
-            </div>
-        `).join('');
-        document.querySelectorAll('.cat-card').forEach(el => {
-            el.addEventListener('click', () => {
-                const catName = el.getAttribute('data-cat');
-                currentFilter = catName;
-                filterAndRenderProducts();
-                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    }
-
-    function filterAndRenderProducts() {
-        let filtered = [...productsData];
-        if(currentFilter && searchGlobal.value.trim() === "") {
-            filtered = productsData.filter(p => p.category.toLowerCase().includes(currentFilter.toLowerCase()));
-        }
-        if(searchGlobal.value.trim() !== "") {
-            const query = searchGlobal.value.trim().toLowerCase();
-            filtered = productsData.filter(p => p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query));
-            if(currentFilter && searchGlobal.value.trim() === "") filtered = productsData.filter(p => p.category.toLowerCase().includes(currentFilter.toLowerCase()));
-        }
-        renderProducts(filtered);
-    }
-
-    function renderProducts(productsArr) {
-        if(productsArr.length === 0) {
-            productsGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center;">✨ No products found. Explore other categories ✨</div>`;
-            return;
-        }
-        productsGrid.innerHTML = productsArr.map(p => `
-            <div class="product-card">
-                <img class="product-img" src="${p.img}" alt="${p.title}" loading="lazy">
-                <div class="product-info">
-                    <h3>${p.title}</h3>
-                    <div class="price-row">
-                        <span class="price">$${p.price}</span>
-                        ${p.oldPrice ? `<span style="text-decoration:line-through; opacity:0.6;">$${p.oldPrice}</span>` : ''}
+    function renderCarCards() {
+        const container = document.getElementById('carsContainer');
+        container.innerHTML = cars.map(car => `
+            <div class="car-card" data-car-id="${car.id}">
+                <img class="car-img" src="${car.img}" alt="${car.name}" loading="lazy">
+                <div class="car-info">
+                    <div class="car-title">
+                        ${car.name}
+                        <span class="price-inr">₹${car.pricePerDay.toLocaleString('en-IN')}</span>
                     </div>
-                    <div style="display:flex; justify-content: space-between; align-items:center;">
-                        <span><i class="fas fa-star" style="color:#FFD966;"></i> ${p.rating}/5</span>
-                        <button class="add-cart" data-id="${p.id}"><i class="fas fa-cart-plus"></i> Add</button>
+                    <div class="features">
+                        <span><i class="fas fa-gas-pump"></i> ${car.fuel}</span>
+                        <span><i class="fas fa-users"></i> ${car.seats} seats</span>
+                        <span><i class="fas fa-cogs"></i> ${car.transmission}</span>
                     </div>
+                    <div style="margin: 6px 0;"><span style="background:rgba(226,184,122,0.2); padding:4px 12px; border-radius:40px; font-size:12px;">${car.badge}</span></div>
+                    <button class="btn-book book-now-btn" data-id="${car.id}"><i class="fas fa-calendar-check"></i> Book Now</button>
                 </div>
             </div>
         `).join('');
-        document.querySelectorAll('.add-cart').forEach(btn => {
+        document.querySelectorAll('.book-now-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const id = parseInt(btn.getAttribute('data-id'));
-                addToCart(id);
+                const carId = parseInt(btn.getAttribute('data-id'));
+                const car = cars.find(c => c.id === carId);
+                if(car) {
+                    currentSelectedCar = car;
+                    document.getElementById('modalCarName').innerText = car.name;
+                    document.getElementById('bookingModal').style.display = 'flex';
+                }
             });
         });
     }
 
-    // Timer for flash sale (ends in 2 days)
-    function startTimer() {
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 2);
-        targetDate.setHours(23, 59, 59, 999);
-        function update() {
-            const now = new Date();
-            const diff = targetDate - now;
-            if (diff <= 0) {
-                document.getElementById('days').innerText = "00";
-                document.getElementById('hours').innerText = "00";
-                document.getElementById('minutes').innerText = "00";
-                document.getElementById('seconds').innerText = "00";
-                return;
-            }
-            const days = Math.floor(diff / (1000*60*60*24));
-            const hrs = Math.floor((diff % (86400000)) / 3600000);
-            const mins = Math.floor((diff % 3600000) / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-            document.getElementById('days').innerText = days < 10 ? "0"+days : days;
-            document.getElementById('hours').innerText = hrs < 10 ? "0"+hrs : hrs;
-            document.getElementById('minutes').innerText = mins < 10 ? "0"+mins : mins;
-            document.getElementById('seconds').innerText = secs < 10 ? "0"+secs : secs;
-        }
-        update();
-        setInterval(update, 1000);
+    // modal handling
+    const modal = document.getElementById('bookingModal');
+    const closeModal = document.getElementById('closeModalBtn');
+    const bookingForm = document.getElementById('bookingForm');
+    const toastPremium = document.getElementById('toastPremium');
+
+    function showToastMsg(message) {
+        toastPremium.textContent = message || "✨ Booking request sent! We'll contact you shortly.";
+        toastPremium.classList.add('show');
+        setTimeout(() => toastPremium.classList.remove('show'), 3500);
     }
 
-    // Testimonials Swiper
-    const testimonialList = [
-        { name: "Zara Chen", text: "Slick UI and super fast delivery. The watch is a game changer!", rating: 5, avatar: "https://randomuser.me/api/portraits/women/68.jpg" },
-        { name: "Marcus V.", text: "Best shopping experience on modern web. Love the design", rating: 5, avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-        { name: "Lena K.", text: "Got the drone, feels premium. Customer support was awesome", rating: 4, avatar: "https://randomuser.me/api/portraits/women/44.jpg" }
+    closeModal.onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const date = document.getElementById('pickupDate').value;
+        const city = document.getElementById('citySelect').value;
+        if (!name || !phone || !date) {
+            showToastMsg("Please fill all required fields (name, phone, date)");
+            return;
+        }
+        if(phone.length < 10) {
+            showToastMsg("Enter valid 10-digit mobile number");
+            return;
+        }
+        // store booking info locally (demo)
+        const bookingData = {
+            car: currentSelectedCar?.name,
+            name, phone, date, city
+        };
+        console.log("Booking confirmed:", bookingData);
+        showToastMsg(`✅ Booking confirmed for ${currentSelectedCar?.name}. Our team will call you.`);
+        modal.style.display = 'none';
+        bookingForm.reset();
+    });
+
+    // testimonial data (premium indian clients)
+    const testimonials = [
+        { name: "Rahul Mehta", role: "CEO, Agora Ventures", text: "The S-Class was pristine, chauffeur extremely professional. Made a client meeting feel world-class.", rating: 5, avatar: "https://randomuser.me/api/portraits/men/15.jpg" },
+        { name: "Neha Singhania", role: "Fashion Designer", text: "Booked Range Rover for my wedding guest transfer. Arrived early, clean, and elegant. Highly recommend!", rating: 5, avatar: "https://randomuser.me/api/portraits/women/33.jpg" },
+        { name: "Vikram Raj", role: "Startup Founder", text: "Super easy booking, transparent pricing, no hidden charges. Porsche Cayenne was pure adrenaline!", rating: 5, avatar: "https://randomuser.me/api/portraits/men/45.jpg" }
     ];
-    function loadTestimonials() {
+
+    function initTestimonialSwiper() {
         const swiperWrapper = document.querySelector('.swiper-wrapper');
-        swiperWrapper.innerHTML = testimonialList.map(t => `
+        if(!swiperWrapper) return;
+        swiperWrapper.innerHTML = testimonials.map(t => `
             <div class="swiper-slide">
-                <div class="testimonial-card">
-                    <div style="display:flex; gap:12px; align-items:center;">
-                        <img src="${t.avatar}" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
-                        <div><strong>${t.name}</strong> <div>${'⭐'.repeat(t.rating)}</div></div>
+                <div class="testi-slide">
+                    <div style="display:flex; align-items:center; gap:16px;">
+                        <img src="${t.avatar}" style="width:56px;height:56px;border-radius:50%;object-fit:cover; border:2px solid #E2B87A;">
+                        <div><strong>${t.name}</strong><br><span style="font-size:12px; color:#BFAA7A;">${t.role}</span></div>
                     </div>
-                    <p style="margin-top: 14px;">“${t.text}”</p>
+                    <div style="margin: 16px 0;">${'⭐'.repeat(t.rating)}</div>
+                    <p>“${t.text}”</p>
                 </div>
             </div>
         `).join('');
         new Swiper('.mySwiper', {
             loop: true,
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 24,
             pagination: { el: ".swiper-pagination", clickable: true },
             breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
         });
     }
 
-    // newsletter
-    document.getElementById('subNewsBtn')?.addEventListener('click', () => {
-        const email = document.getElementById('newsEmail').value;
-        const msgDiv = document.getElementById('newsMsg');
-        if(!email.includes('@')) msgDiv.innerText = "Valid email please 💫";
-        else { msgDiv.innerText = "Subscribed! 15% off on first order 🚀"; setTimeout(()=> msgDiv.innerText="",3000);}
+    // quick support / scroll
+    document.getElementById('quickSupport')?.addEventListener('click', () => {
+        showToastMsg("📞 Concierge: +91 9999 888 777 | Available 24x7");
     });
-    document.getElementById('flashDealBtn')?.addEventListener('click', () => {
-        cartItemsCount +=1;
-        updateCartUI();
-        showToast("🔥 Flash Deal added to cart");
-    });
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=>{
-        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-    });
-    searchGlobal.addEventListener('input', () => {
-        currentFilter = "";
-        filterAndRenderProducts();
+    document.getElementById('exploreFleet')?.addEventListener('click', () => {
+        document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Theme toggle with local persistence
-    function initTheme() {
-        const saved = localStorage.getItem('theme');
-        if(saved === 'light') {
-            document.body.classList.add('light');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            document.body.classList.remove('light');
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-    }
-    themeToggleBtn.addEventListener('click', () => {
-        if(document.body.classList.contains('light')) {
-            document.body.classList.remove('light');
-            localStorage.setItem('theme', 'dark');
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-            document.body.classList.add('light');
-            localStorage.setItem('theme', 'light');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-    });
-    // load cart from localStorage
-    const storedCart = localStorage.getItem('nebulaCartCount');
-    if(storedCart) cartItemsCount = parseInt(storedCart) || 0;
-    updateCartUI();
-
-    // final init
-    renderCategories();
-    renderProducts(productsData);
-    startTimer();
-    loadTestimonials();
-    initTheme();
-    document.getElementById('cartIcon')?.addEventListener('click', () => {
-        showToast(`🛒 Cart total: ${cartItemsCount} item(s) | Checkout demo`);
-    });
+    renderCarCards();
+    initTestimonialSwiper();
 </script>
 </body>
 </html>
